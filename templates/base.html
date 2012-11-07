@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BlanKonf #4 :: CICO Resort - Bogor, 1-2 Desember 2012 : {% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="BlanKonf #4, BlanKonf 2012"/>
+    <meta name="description" content="BlanKonf #4 2012 - Revolusi Teknologi Informasi dan Komunikasi Indonesia"/>
+    <link rel="stylesheet" href="/media/css/reset.css" media="screen">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Titillium+Web:400,300">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Courgette">
+    <link rel="stylesheet" href="/media/css/style.css" media="screen">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script src="/media/js/jquery.cycle.all.js"></script>
+    <script src="/media/js/jquery.tweet.js"></script>
+    <script>
+    jQuery(document).ready(function($) {
+        $("#tweets").tweet({
+            count: 5,
+            username: "blankonf",
+            callback: tweet_cycle
+        });
+        $("#twitter #prev-tweet").hover(function() { 
+            $(this).stop().animate({ 
+                left: "27" 
+            }, "fast");
+        }, function() { 
+            $(this).stop().animate({
+                left: "30" 
+            }, "fast");
+        });        
+        $("#twitter #next-tweet").hover(function() { 
+            $(this).stop().animate({ 
+                right: "27" 
+            }, "fast");
+        }, function() { 
+            $(this).stop().animate({
+                right: "30" 
+            }, "fast");
+        });
+        function tweet_cycle() {
+            $('#tweets .tweet_list').cycle({ 
+                fx: 'scrollHorz', 
+                speed:  500, 
+                timeout: 0, 
+                pause: 1,
+                next: '#twitter #next-tweet', 
+                prev: '#twitter #prev-tweet' 
+            });
+        }
+    });
+    function emf_open_window(url, height, width) {
+        var leftPos = 0;
+        var topPos = 0;
+        if (screen) {
+            leftPos = (screen.width - width) / 2;
+            topPos = (screen.height - height) / 2;
+            window.open(url, null, 'width='+width+',height='+height+',left='+leftPos+',top='+topPos+', toolbar=0, location=0, status=1, scrollbars=1, resizable=1');
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <div id="line"></div>
+    <div id="twitter">
+        <div class="wrapper">
+            <a href="#" id="prev-tweet"></a>
+            <a href="#" id="next-tweet"></a>
+            <img id="bird" src="/media/images/bird.png" alt="Tweets" />
+            <div id="tweets">
+                <ul class="tweet_list"></ul>
+            </div>
+        </div>
+    </div>
+    <header class="wrap">
+        <div id="logo">
+            <h1>Konferensi BlankOn 2012</h1>
+        </div>
+    </header>
+    <hr>
+    <section id="main" class="wrap">
+        <h1>Konferensi BlankOn #4</h1>
+        <h1>CICO Resort - Bogor, 1-2 Desember 2012</h1>
+        <h2>Revolusi Teknologi Informasi dan Komunikasi Indonesia</h2>
+        {% block content %}{% endblock %}
+    </section>
+    <hr>
+    <nav class="wrap">
+        <ul id="menu">
+            <li>&copy; 2012</li>
+            <li><a href="./">Beranda</a></li>
+            <li><a href="http://blankonlinux.or.id/" target="_blank">BlankOn Linux</a></li>
+            <li><a href="http://dev,blankonlinux.or.id/" target="_blank">Pengembang BlankOn Linux</a></li>
+        </ul>
+    </nav>
+    <div id="line"></div>
+</body>
+</html>
+
+<!--
+
+Konf Template
+Fitra Aditya (fitra@di.blankon.in)
+CC-BY-SA
+
+-->

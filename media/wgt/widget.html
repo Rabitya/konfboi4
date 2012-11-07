@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!-- Original writer : http://www.corbindavenport.com/-->
+<head>
+<meta http-equiv="Content-Type" content="text/html" ; charset=UTF-8" />
+<title>Ubuntu Widget</title>
+<style>
+body {margin:0px; padding:0px; background:transparent; overflow:hidden;}
+#widget {font-family: 'Ubuntu', sans-serif; cursor:pointer;}
+#titlebar {text-align: center;color:#ffffff; font-size:11px; font-weight:bold; height:15px; background: #53524d; background: url(dark.svg); background: -moz-linear-gradient(top, #53524d 0%, #4c4b46 10%, #3f3e3a 81%, #403f3a 86%, #383733 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#53524d), color-stop(10%,#4c4b46), color-stop(81%,#3f3e3a), color-stop(86%,#403f3a), color-stop(100%,#383733)); background: -webkit-linear-gradient(top, #53524d 0%,#4c4b46 10%,#3f3e3a 81%,#403f3a 86%,#383733 100%); background: -o-linear-gradient(top, #53524d 0%,#4c4b46 10%,#3f3e3a 81%,#403f3a 86%,#383733 100%); background: -ms-linear-gradient(top, #53524d 0%,#4c4b46 10%,#3f3e3a 81%,#403f3a 86%,#383733 100%); background: linear-gradient(to bottom, #53524d 0%,#4c4b46 10%,#3f3e3a 81%,#403f3a 86%,#383733 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#53524d', endColorstr='#383733',GradientType=0 ); position:absolute; left:0px; right:0px; z-index:2;}
+#content {font-weight:bold; vertical-align:bottom; padding-top:127px; text-align:center; color:#ffffff; position:absolute; left:0px; right:0px; bottom:0px; top:0px; background:url(bg.png); z-index:1;}
+#header {font-size:24px; font-weight:bold; z-index:0;}
+</style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25773288-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+<div id="widget" onclick="window.parent.location=('http://konf2012.blankonlinux.or.id/')">
+	<div id="titlebar">Bogor, 1-2 Desember 2012</div>
+    <div id="content"><script>
+var before="Sebentar lagi!"
+var current="Acara sudah dimulai! :)"
+var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+
+function countdown(yr,m,d){
+var today=new Date()
+var todayy=today.getYear()
+if (todayy < 1000)
+todayy+=1900
+var todaym=today.getMonth()
+var todayd=today.getDate()
+var todaystring=montharray[todaym]+" "+todayd+", "+todayy
+var futurestring=montharray[m-1]+" "+d+", "+yr
+var difference=(Math.round((Date.parse(futurestring)-Date.parse(todaystring))/(24*60*60*1000))*1)
+if (difference==0)
+document.write(current)
+else if (difference>0)
+document.write(difference+" hari lagi!")
+}
+countdown(2012,12,01)
+</script></div>
+</div>
+</body>
+</html>
