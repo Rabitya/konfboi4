@@ -90,6 +90,11 @@ hr {
     float: left;
     background: url('../images/logo.png') 0 0 no-repeat;
 }
+#logo-right {
+    margin-top: 10px;
+    display: block;
+    float: right;
+}
 #logo h1 {
     text-indent: -9999em;
 }
