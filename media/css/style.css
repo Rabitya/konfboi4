@@ -210,7 +210,7 @@ hr {
     text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
 }
 #sponsor-area img {
-    display: block;
+    display: inline;
     margin: auto;
 }
 #menu ul {
